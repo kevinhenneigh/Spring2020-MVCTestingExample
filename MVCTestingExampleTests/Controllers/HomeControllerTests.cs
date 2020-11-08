@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using MVCTestingExample.Controllers;
 using System;
 using System.Collections.Generic;
@@ -10,9 +11,13 @@ namespace MVCTestingExample.Controllers.Tests
     public class HomeControllerTests
     {
         [TestMethod()]
-        public void IndexTest()
+        public void Index_ReturnsNonNullViewResult()
         {
-            Assert.Fail();
+            HomeController myComtroller = new HomeController();
+
+            IActionResult result = myComtroller.Index();
+
+            Assert.IsNotNull(result);
         }
     }
 }
