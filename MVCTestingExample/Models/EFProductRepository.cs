@@ -19,7 +19,7 @@ namespace MVCTestingExample.Models
             throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<Product>> GetAllProductsAsync()
+        public Task<List<Product>> GetAllProductsAsync()
         {
             throw new NotImplementedException();
         }
