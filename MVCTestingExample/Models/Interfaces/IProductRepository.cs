@@ -5,11 +5,12 @@ using System.Threading.Tasks;
 
 namespace MVCTestingExample.Models.Interfaces
 {
-    interface IProductRepository
+   public interface IProductRepository
     {
         Task<Product> GetProductByIdAsync(int id);
 
-        Task<IEnumerable<Product>> GetAllProductsAsync();
+        Task<List<Product>> GetAllProductsAsync(); 
+        
 
         Task AddProductAsync(Product p);
 
