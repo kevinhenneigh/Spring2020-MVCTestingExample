@@ -10,7 +10,10 @@ namespace MVCTestingExample.Models
     {
         [Key]
         public int ProductId { get; set; }
+
+        [Required]
         public string Name { get; set; }
+
         public string Price { get; set; }
 
     }

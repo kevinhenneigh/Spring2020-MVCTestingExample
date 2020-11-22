@@ -10,7 +10,7 @@ namespace MVCTestingExample.Controllers.Tests
     [TestClass]
     public class HomeControllerTests
     {
-        [TestMethod()] 
+        [TestMethod] 
         public void Index_ReturnsNonNullViewResult()
         {
             HomeController myComtroller = new HomeController();
@@ -18,6 +18,7 @@ namespace MVCTestingExample.Controllers.Tests
             IActionResult result = myComtroller.Index();
 
             Assert.IsNotNull(result);
+            Assert.IsInstanceOfType(result, typeof(ViewResult), "Index should return a ViewResult");
         }
     }
 }
