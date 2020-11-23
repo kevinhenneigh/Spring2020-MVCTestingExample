@@ -109,7 +109,7 @@ namespace MVCTestingExample.Controllers.Tests
             var controller = new ProductsController(mockRepo.Object);
             var invalidProduct = new Product()
             {
-                Name = null, // Name is required to be valid 
+                Name = string.Empty, // Name is required to be valid 
                 Price = "9.99",
                 ProductId = 1
             };
@@ -126,8 +126,7 @@ namespace MVCTestingExample.Controllers.Tests
 
             // Ensure Invalid Product is passed back to the view 
             Product modelBoundProduct = viewResult.Model as Product;
-            Assert.AreEqual(modelBoundProduct, invalidProduct,
-                "Invalid Product should be passed back to View");
+            Assert.AreEqual(modelBoundProduct, invalidProduct);
         }
     }
 }
